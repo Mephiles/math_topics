@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Matemaatika üleminekueksam</title>
+	<meta charset="utf-8">
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+	<script
+	  src="https://code.jquery.com/jquery-3.4.1.min.js"
+	  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+	  crossorigin="anonymous"></script>
+	<style type="text/css">
+		body {
+			font-family: Arial;
+			margin: 0;
+			padding: 0 10px;
+			position: relative;
+			padding-bottom: 100px;
+		}
+
+		.eq {
+			font-size: 21px;
+		}
+		.text {
+			text-align: center;
+		}
+
+		.hl {
+			background-color: red;
+		}
+		.divider {
+			height: 1px;
+			background-color: grey;
+		}
+		.short {
+			width: 20%;
+		}
+		.long {
+			width: 60%;
+		}
+		.center {
+			margin: auto;
+		}
+		.subject h3 {
+			cursor: pointer;
+			margin: 0;
+			padding: 15px 5px;
+		}
+		.subject h3:hover {
+			background-color: #e1e1e1;
+		}
+		#tab-selector {
+			display: flex;
+			flex-flow: row;
+		}
+		#tab-selector .tab {
+			font-size: 19px;
+			padding-left: 15px;
+			padding-right: 15px;
+			cursor: pointer;
+			color: lightgrey;
+			font-weight: 600;
+			font-style: italic;
+		}
+		#tab-selector .tab:hover {
+			color: black;
+		}
+		#tab-selector .tab-divider {
+			font-size: 23px;
+			color: lightgrey;
+		}
+
+		img#vektorid_1 {
+			margin-left: 40%;
+		}
+		h4{
+			margin-left: 300px;
+		}
+		.b {
+			font-weight: 600;
+		}
+		#ball-example {
+			max-width: 600px;
+			margin: auto;
+			position: relative;
+		}
+		#ball-example .row{
+			display: flex;
+			flex-flow: row;
+		}
+		#ball-example .row span {
+			line-height: 35px
+		}
+		#ball-example .ball {
+			width: 30px;
+			height: 30px;
+			text-align: center;
+			line-height: 30px;
+			border: 0.5px solid lightgrey;
+			border-radius: 100%;
+			margin: 5px;
+		}
+
+		.ball.red {
+			background-color: pink;
+		}
+		.ball.yellow {
+			background-color: lightyellow;
+		}
+		.ball.blue {
+			background-color: lightblue;
+		}
+		.ball.green {
+			background-color: lightgreen;
+		}
+		.ball.black {
+			background-color: black;
+			color: white;
+		}
+		.page#valemid {
+			display: none;
+		}
+		.tab.active {
+			color: grey !important; 
+		}
+		.subject.empty h3 {
+			background-color: pink;
+		}
+	</style>
+	$$
+		\require{color}
+	$$
+</head>
+<body>
+	<div id="tab-selector">
+		<div class="tab active" id="ylesanded">Näidis ülesanded</div>
+		<div class="tab-divider">/</div>
+		<div class="tab" id="valemid">Valemid</div>
+	</div>
+	<h2>Matemaatika teemad</h2>
+	<hr>
+
+	<div class="page" id="valemid">
+		<div class="subject empty">
+			<h3>Avaldised</h3>
+			<div class="content eq" style="display: none"></div>
+			<hr>
+		</div>
+		<div class="subject empty">
+			<h3>Võrrandid, võrratused & süsteemid</h3>
+			<div class="content eq" style="display: none"></div>
+			<hr>
+		</div>
+		<div class="subject">
+			<h3>Trigonomeetria</h3>
+			<div class="content eq" style="display: none">
+				$$
+					sin^2 \alpha + cos^2 \alpha = 1 \\
+					tan \alpha = {{sin \alpha} \over {cos \alpha}} \\
+					1 + tan^2 \alpha = {1 \over {cos^2 \alpha}}
+				$$
+				<div class="short center divider"></div>
+				$$
+					sin(- \alpha) = -sin \alpha \\
+					cos(- \alpha) = cos \alpha \\
+					tan(- \alpha) = -tan \alpha \\
+				$$
+				<div class="short center divider"></div>
+				$$
+					sin(\alpha \pm \beta) = sin \alpha cos \beta \pm cos \alpha sin \beta \\
+					cos(\alpha \pm \beta) = cos \alpha cos \beta \mp sin \alpha sin \beta \\
+					tan(\alpha \pm \beta) = {{tan \alpha \pm tan \beta}\over{1 \mp tan \alpha tan \beta}} \\
+				$$
+				<div class="short center divider"></div>
+				$$
+					sin2 \alpha = 2sin \alpha cos \alpha \\
+					cos2 \alpha = cos^2 \alpha - sin^2 \alpha \\
+					tan2 \alpha = {{2tan \alpha}\over{1-tan^2 \alpha}} \\
+				$$
+				<div class="short center divider"></div>
+				$$
+					sin x = m \colorbox{lightgreen}{=>} x = (-1)^n arcsin(m) + n \pi \\
+					cos x = m \colorbox{lightgreen}{=>} x = \pm arccos(m) + 2n \pi \\
+					tan x = m \colorbox{lightgreen}{=>} x = arctan(m) + n \pi \\
+				$$
+			</div>
+			<hr>
+		</div>
+		<div class="subject">
+			<h3>Vektorid</h3>
+			<div class="content eq" style="display: none">
+				$$
+					\overrightarrow{AB} = \overrightarrow{a} = (x_2-x_1 ; y_2-y_1) \\
+					|\overrightarrow{AB}| = \sqrt{x^2 + y^2} \\
+					cos\alpha = {{\overrightarrow{AB} * \overrightarrow{AC}}\over{|\overrightarrow{AB}|*|\overrightarrow{AC}|}} = {{(x_1*x_2) + (y_1*y_2)}\over{|\overrightarrow{AB}|*|\overrightarrow{AC}|}}
+				$$
+			</div>
+			<hr>
+		</div>
+		<div class="subject">
+			<h3>Sirged & ringjoon</h3>
+			<div class="content" style="display: none">
+				<h4>Sirge võrrand (punkt + tõus)</h4>
+				<div class="eq">
+					$$
+						y-y_1=k(x-x_1)
+					$$
+				</div>
+				<div class="long center divider"></div>
+				<h4>Sirge võrrand (punkt + punkt)</h4>
+				<div class="eq">
+					$$
+						{{y-y_1}\over{y_2-y_1}} = {{x-x_1}\over{x_2-x_1}}
+					$$
+				</div>
+				<div class="long center divider"></div>
+				<h4>Sirge võrrand (punkt + sihivektor)</h4>
+				<div class="eq">
+					$$
+						{{y-y_1}\over{s_y}} = {{x-x_1}\over{s_x}}
+					$$
+				</div>
+				<div class="long center divider"></div>
+				<h4>Ringi valem</h4>
+				<div class="eq">
+					$$
+						(x-x_1)^2 + (y-y_1)^2 = r^2
+					$$
+				</div>
+			</div>
+			<hr>
+		</div>
+		<div class="subject">
+			<h3>Tõenäosus</h3>
+			<div class="content" style="display: none">
+				<h4>Permutatsioonid</h4>
+				<div class="text">
+					<span class="b">Kasutatakse</span>, kui on mingi arv (<i>k</i>) mingeid asju ja tahetakse teada, kui palju erinevaid järjestamismooduseid on.<br>
+					<span class="b">Näide</span>: Kui mitu erinevat kombinatsiooni saab teha 5st pallist? (<span class="b">P</span>unane, <span class="b">K</span>ollane, <span class="b">S</span>inine, <span class="b">R</span>oheline, <span class="b">M</span>ust)
+					<br>
+					<br>
+					<div id="ball-example">
+						<div class="row">
+							<div class="ball red">P</div>
+							<div class="ball yellow">K</div>
+							<div class="ball blue">S</div>
+							<div class="ball green">R</div>
+							<div class="ball black">M</div>
+						</div>
+						<div class="row">
+							<div class="ball red">P</div>
+							<div class="ball yellow">K</div>
+							<div class="ball blue">S</div>
+							<div class="ball black">M</div>
+							<div class="ball green">R</div>
+						</div>
+						<div class="row">
+							<div class="ball red">P</div>
+							<div class="ball yellow">K</div>
+							<div class="ball black">M</div>
+							<div class="ball blue">S</div>
+							<div class="ball green">R</div>
+						</div>
+						<div class="row" style="font-size: 40px; padding-left: 90px">...</div>
+					</div>
+					Võimaluste hulga leidmiseks kasutatakse valemit $$P_k = k!$$ kus <i>k</i> on koguasjade arv.
+				</div>
+				<div class="long center divider"></div>
+				<h4>Variatsioonid</h4>
+				<div class="text">
+					<span class="b">Kasutatakse</span>, kui on mingi arv (<i>k</i>) mingeid asju ja need on vaja jagada mingi arvu (<i>n</i>) suurustesse gruppidesse. <br>Tähtis on see, et kui ühes grupis vahetada kahe eseme järjestus, siis <u><b>tekib uus grupp</b></u>. <br>
+					<span class="b">Näide</span>: mitu erinevat 3st gruppi saab teha 5st pallist?
+					<br>
+					<br>
+					<div id="ball-example">
+						<div class="row">
+							<div class="ball red">P</div>
+							<div class="ball yellow">K</div>
+							<div class="ball blue">S</div>
+							<span>- 1. grupp</span>
+						</div>
+						<div class="row">
+							<div class="ball red">P</div>
+							<div class="ball yellow">K</div>
+							<div class="ball black">M</div>
+							<span>- 2. grupp</span>
+						</div>
+						<div class="row">
+							<div class="ball red">P</div>
+							<div class="ball black">M</div>
+							<div class="ball yellow">K</div>
+							<span>- 3. grupp</span>
+						</div>
+						<div class="row" style="font-size: 40px; padding-left: 50px">...</div>
+					</div>
+					Võimaluste hulga leidmiseks kasutatakse valemit $${V_k}^n = {{k!}\over{(k-n)!}}$$ kus <i>k</i> on koguasjade arv ja <i>n</i> grupi suurus.
+				</div>
+				<div class="long center divider"></div>
+				<h4>Kombinatsioonid</h4>
+				<div class="text">
+					<span class="b">Kasutatakse</span>, kui on mingi arv (<i>k</i>) mingeid asju ja need on vaja jagada mingi arvu (<i>n</i>) suurustesse gruppidesse. <br>Tähtis on see, et kui ühes grupis vahetada kahe eseme järjestus, siis <u><b>uut gruppi ei teki</b></u>.<br> Järelikult on võimalusi vähem ja sellest tuleneb ka valemi erinevus võrreldes Variatsioonidega.
+					<br>
+					<br>
+					<div id="ball-example">
+						<div class="row">
+							<div class="ball red">P</div>
+							<div class="ball yellow">K</div>
+							<div class="ball blue">S</div>
+							<span>- 1. grupp</span>
+						</div>
+						<div class="row">
+							<div class="ball red">P</div>
+							<div class="ball yellow">K</div>
+							<div class="ball black">M</div>
+							<span>- 2. grupp</span>
+						</div>
+						<div class="row">
+							<div class="ball red">P</div>
+							<div class="ball black">M</div>
+							<div class="ball yellow">K</div>
+							<span>- Ei loe, sest selline grupp on juba olemas. <br>(erinev järjestus ei moodusta uut gruppi)</span>
+						</div>
+						<div class="row" style="font-size: 40px; padding-left: 50px">...</div>
+					</div>
+					Võimaluste hulga leidmiseks kasutatakse valemit $${C_k}^n = {{k!}\over{n!(k-n)!}}$$ kus <i>k</i> on koguasjade arv ja <i>n</i> grupi suurus.
+				</div>
+			</div>
+			<hr>
+		</div>
+		<div class="subject empty">
+			<h3>Aritmeetiline & geomeetriline jada</h3>
+			<div class="content" style="display: none">
+				
+			</div>
+			<hr>
+		</div>
+		<div class="subject">
+			<h3>Eksponent & logaritm. Funktsioonid ja võrrandid</h3>
+			<div class="content" style="display: none">
+				$$
+					a^b = c \colorbox{lightgreen}{=>} log_ac=b
+				$$
+				<div class="short center divider"></div>
+				$$
+					log_ac = {{log_dc}\over{log_da}} \\
+					log_a(b*c) = log_ab + log_ac \\
+					log_a({b \over c}) = log_ab - log_ac \\
+					log_ab^n = n*log_ab
+				$$
+			</div>
+			<hr>
+		</div>
+		<div class="subject">
+			<h3>Tuletis</h3>
+			<div class="content eq" style="display: none">
+				$$
+					x' = 1 \\
+					a' = 0 \\
+					(x^a)' = ax^{a-1} \\
+					(e^x)' = e^x \\
+					(a^x)' = a^xlna \\
+					(lnx)' = {1 \over x} \\
+					(log_ax)' = {1 \over {xlna}}\\
+					(sinx)' = cosx \\
+					(cosx)' = -sinx \\
+					(tanx)' = {1 \over {cos^2x}} \\
+				$$
+				<div class="short center divider"></div>
+				$$
+					y = a*b \\
+					y' = a'*b + b'*a \\
+					\\
+					y = {a \over b} \\
+					y' = {{a'*b - b'*a}\over{b^2}}
+				$$
+			</div>
+			<hr>
+		</div>
+		<div class="subject empty">
+			<h3>Determinandid</h3>
+			<div class="content" style="display: none"></div>
+			<hr>
+		</div>
+		<div class="subject empty">
+			<h3>Funktsiooni lahendamine</h3>
+			<div class="content" style="display: none"></div>
+			<hr>
+		</div>
+	</div>
+	<div class="page" id="ylesanded">
+		<div class="subject">
+			<h3>Avaldised</h3>
+			<div class="content eq" style="display: none">
+				$$
+					\left({x \over4 y}\right)^3 * \left({8y \over x}\right)^3 + \left({y^{1\over14}}\right)^7 - y^4 : y^{7 \over 2} = 
+					\left({{\not x* \not 8^2 \not y} \over {\not 4 \not y* \not x}} \right)^3 + y^{{1*7} \over 14} - y^{{8\over2} - {7\over2}} = 
+					2^3 + \not{y^{1\over2}} - \not{y^{1\over2}} = 8 
+				$$
+			</div>
+			<hr>
+		</div>
+		<div class="subject">
+			<h3>Võrrandid, võrratused & süsteemid</h3>
+			<div class="content eq" style="display: none">
+				$$
+					
+					\begin{cases}
+					(x-12)^2 + (y+7)^2 = 40 \\
+					x-y-11 = 10
+					\end{cases}
+					\colorbox{lightgreen}{=>}
+					\begin{cases}
+					(x-12)^2 + (y+7)^2 = 40 \\
+					\colorbox{yellow}{x = y+11}
+					\end{cases}
+				$$
+				<div class="short center divider"></div>
+				$$
+					\biggl[(\colorbox{yellow}{x}-12)^2 + (y+7)^2 = 40 \biggr] \colorbox{lightgreen}{=>}
+					\biggl[(\colorbox{yellow}{(y+11)}-12)^2 + (y+7)^2=40 \biggr] \colorbox{lightgreen}{=>}
+					\biggl[(y-1)^2 + (y+7)^2 = 40 \biggr] \colorbox{lightgreen}{=>}
+				$$
+				$$
+					\biggl[y^2 - 2y + 1 + y^2 + 14y + 49 - 40 = 0 \biggr] \colorbox{lightgreen}{=>}
+					\biggl[2y^2 + 12y + 10 = 0 \biggr]
+				$$
+				<div class="short center divider"></div>
+				$$
+					2y^2 + 12y + 10 = 0 \bigg|:2
+				$$
+				$$
+					y^2 + 6y + 5 = 0
+				$$
+				<div class="short center divider"></div>
+				$$
+					y_{1,2} = {{-6 \pm \sqrt{36-20}}\over{2}} = {{-6 \pm 4}\over{2}}
+				$$
+				$$
+					y_1 = {{-6 + 4}\over{2}} = -1
+				$$
+				$$
+					y_2 = {{-6 - 4}\over{2}} = -5
+				$$
+				$$
+					x_1 = \colorbox{yellow}{-1 + 11} = 10
+				$$
+				$$
+					x_2 = \colorbox{yellow}{-5 + 11} = 6
+				$$
+			</div>
+			<hr>
+		</div>
+		<div class="subject empty">
+			<h3>Trigonomeetria</h3>
+			<div class="content eq" style="display: none"></div>
+			<hr>
+		</div>
+		<div class="subject">
+			<h3>Vektorid</h3>
+			<div class="content eq" style="display: none">
+				<img id="vektorid_1" src="vektorid_1.png" alt="Powered by: MS Paint">
+				$$
+					\overrightarrow{AB} = \overrightarrow{a} = \overrightarrow{AB} (x_2-x_1 ; y_2-y_1) = \overrightarrow{AB} (-6-5 ; 8-3) = (\colorbox{yellow}{-11};5)
+				$$
+				$$
+					\overrightarrow{AC} = \overrightarrow{b} = \overrightarrow{AB} (-9-5 ; -5-3) = (\colorbox{lightgreen}{-14};-8)
+				$$
+				$$
+					|\overrightarrow{AB}| = \sqrt{x^2 + y^2} = \sqrt{(-11)^2 + 5^2} = \sqrt{146} \approx 12,1
+				$$
+				$$
+					|\overrightarrow{AC}| = \sqrt{(-14)^2 + (-8))^2} = \sqrt{260} \approx 16,1
+				$$
+				$$
+					cos\alpha = {{\overrightarrow{AB} * \overrightarrow{AC}}\over{|\overrightarrow{AB}|*|\overrightarrow{AC}|}} = 
+					{{(\colorbox{yellow}{x}_1*\colorbox{lightgreen}{x}_2) + (y_1*y_2)}\over{12,1 * 16,1}} = {{(-11)*(-14) + (5) * (-8)}\over{194,81}} = 
+					{{114}\over{194,81}} = 0,59
+				$$
+				$$
+					\alpha = arccos(0,59) = 53^\text{o}51'
+				$$
+			</div>
+			<hr>
+		</div>
+		<div class="subject">
+			<h3>Sirged & ringjoon</h3>
+			<div class="content" style="display: none">
+				<h4>Sirge võrrand (punkt + tõus)</h4>
+				<div class="eq">
+					$$
+						y=x^3+1 \\
+						\colorbox{yellow}{x}_1 = 1
+					$$
+					<div class="short center divider"></div>
+					$$
+						y_1 = {\colorbox{yellow}{x}_1}^3 + 1 = 1^3 + 1 = 2 \\
+						y' = 3x^2 \\
+						k = y'(\colorbox{yellow}{x}_1) = 3*{\colorbox{yellow}{x}_1}^2 = 3*1^2 = 3
+					$$
+					<div class="short center divider"></div>
+					$$
+						y-y_1 = k(x-x_1) \colorbox{lightgreen}{=>} \\
+						y-2 = 3(x-1) \\
+						y = 3x-3+2 \\
+						y = 3x-1
+					$$
+				</div>
+				<div class="long center divider"></div>
+				<h4>Sirge võrrand (punkt + punkt)</h4>
+				<div class="eq">
+					$$
+						A(3;4) \\
+						B(6;-2)
+					$$
+					<div class="short center divider"></div>
+					$$
+						{{y-y_1}\over{y_2-y_1}} = {{x-x_1}\over{x_2-x_1}} \colorbox{lightgreen}{=>} 
+						{{y-4}\over{-2-4}} = {{x-3}\over{6-3}} \colorbox{lightgreen}{=>} 
+						{\colorbox{yellow}{y-4}\over \colorbox{lightgreen}{-6}} = {\colorbox{lightgreen}{x-3}\over \colorbox{yellow}{3}} \\
+						\colorbox{yellow}{3}(\colorbox{yellow}{y-4}) = \colorbox{lightgreen}{-6}(\colorbox{lightgreen}{x-3}) \\
+						3y-12 = -6x+18 \\
+						3y = -6x + 18 + 12 \\
+						3y = -6x + 30 \bigg| :3 \\
+						y = -2x + 10
+					$$
+				</div>
+				<div class="long center divider"></div>
+				<h4>Sirge võrrand (punkt + sihivektor)</h4>
+				<div class="eq">
+					$$
+						A(-8;7) \\
+						\overrightarrow{a} = (4, -3) 
+					$$
+					<div class="short center divider"></div>
+					$$
+						{{x-x_1}\over{a_x}} = {{y-y_1}\over{a_y}} \colorbox{lightgreen}{=>} {{x+8}\over{4}} = {{y-7}\over{-3}} \\
+						4(y-7) = -3(x+8) \\
+						4y-28 = -3x -24 \\
+						4y = -3x-24+28 \\
+						4y = -3x+4 \bigg|:4 \\
+						y=-{3\over4}x+1
+					$$
+				</div>
+				<div class="long center divider"></div>
+				<h4>Ringi võrrand</h4>
+				<div class="eq">
+					$$
+						r=5 \\
+						A(\colorbox{yellow}{7};\colorbox{pink}{-2})
+					$$
+					<div class="short center divider"></div>
+					$$
+						(x-\colorbox{yellow}{x}_1)^2 + (y-\colorbox{pink}{y}_1)^2 = r^2 \colorbox{lightgreen}{=>} \\
+						(x-7)^2 + (y-(-2))^2 = 5^2 \\
+						(x-7)^2 + (y+2)^2 = 25
+					$$
+				</div>
+				<div class="long center divider"></div>
+				<h4>Raadiuse ja keskpunkti leidmine</h4>
+				<div class="eq">
+					$$
+						x^2 + y^2 + 2x - 6y = 3 \\
+						x^2 + 2x + ... + y^2 - 6y + ... = 3 \\
+						x^2 + 2x + 1^2 + y^2 - 6y + 3^2 = 3 + 1^2 + 3^2 \\
+						x^2 + 2x + 1^2 + y^2 - 6y + 3^2 = 3 + 1 + 9 \\ 
+						(x+1)^2 + (y-3)^2 = 13
+					$$
+					<div class="short center divider"></div>
+					$$
+						O(-1;3) \\
+						r = \sqrt{13}
+					$$
+				</div>
+			</div>
+			<hr>
+		</div>
+		<div class="subject">
+			<h3>Tõenäosus</h3>
+			<div class="content" style="display: none">
+				<h4>Permutatsioonid</h4>
+				<div class="text">
+					Kui mitu erinevat kombinatsiooni saab teha 5st pallist? (<b>P</b>unane, <b>K</b>ollane, <b>S</b>inine, <b>R</b>oheline, <b>M</b>ust)
+				</div>
+				<div class="eq">
+					$$
+						P_k = k! \\
+						P_5 = 5! \\
+						P_5 = 120
+					$$
+				</div>
+				<div class="long center divider"></div>
+				<h4>Variatsioonid</h4>
+				<div class="text">
+					Kui mitu erinevat 3st gruppi saab teha 5st pallist? (<b>P</b>unane, <b>K</b>ollane, <b>S</b>inine, <b>R</b>oheline, <b>M</b>ust)
+				</div>
+				<div class="eq">
+					$$
+						V_k^n = {{k!}\over{(k-n)!}} \\
+						V_5^3 = {{5!}\over{(5-3)!}} \\
+						V_5^3 = {{120}\over{2}} \\
+						V_5^3 = 60
+					$$
+				</div>
+				<div class="long center divider"></div>
+				<h4>Kombinatsioonid</h4>
+				<div class="text">
+					Kui mitu erinevat 3st gruppi saab teha 5st pallist? (<b>P</b>unane, <b>K</b>ollane, <b>S</b>inine, <b>R</b>oheline, <b>M</b>ust) <br>Sama järjestusega gruppe ei tohi olla.
+				</div>
+				<div class="eq">
+					$$
+						C_k^n = {{k!}\over{n!(k-n)!}} \\
+						C_5^3 = {{5!}\over{3!(5-3)!}} \\
+						C_5^3 = {{120}\over{6*2}} \\
+						C_5^3 = {{120}\over{12}} \\
+						C_5^3 = 10
+					$$
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="subject">
+			<h3>Aritmeetiline & geomeetriline jada</h3>
+			<div class="content eq" style="display: none">
+				<h4>Artimeetiline jada</h4>
+				<div class="eq">
+					$$
+						a_1 = -5 \\
+						a_8 = 30 \\
+						S_{10} = ?
+					$$
+					<div class="short center divider"></div>
+					$$
+						a_n = a_1 + d(n-1) \\
+						a_8 = a_1 + d(8-1) \\
+						30 = -5 + d(7) \\
+						30 = -5 + 7d \\
+						-7d = -5 - 30 \\
+						-7d = -35 \bigg| : (-7) \\
+						d = 5
+					$$
+					<div class="short center divider"></div>
+					$$
+						a_{10} = -5 + 5(10-1) \\
+						a_{10} = -5 + 45 \\
+						a_{10} = 40
+					$$
+					<div class="short center divider"></div>
+					$$
+						S_n = {{a_1+a_n}\over{2}}*n \\
+						S_{10} = {{-5 + 40}\over{2}}*10 \\
+						S_{10} = {{35*10}\over{2}} \\
+						S_{10} = 175
+					$$	
+				</div>
+				<div class="long center divider"></div>
+				<h4>Geomeetriline jada</h4>
+				<div class="eq">
+					$$
+						a_1 = 9 \\
+						a_6 = 1{{5}\over{27}} \\
+						q = ?
+					$$
+					<div class="short center divider"></div>
+					$$
+						a_n = a_1 * q^{n-1} \\
+						a_6 = a_1 * q^{6-1} \\
+						1{{5}\over{27}} = 9 * q^5 \\
+						q^5 = 1{{5}\over{27}} : 9 \\
+						q^5 = {{32*1} \over {27*9}} \\
+						q = \sqrt[5]{32\over243} \\
+						q = {2\over3}
+					$$
+			</div>
+		</div>
+		<hr>
+		<div class="subject">
+			<h3>Eksponent & logaritm. Funktsioonid ja võrrandid</h3>
+			<div class="content eq" style="display: none">
+				$$
+					7^x=15 \colorbox{lightgreen}{=>} log_7 15 = x
+				$$
+				<div class="short center divider"></div>
+				$$
+					x = log_7 15 = {{log_{10} 15}\over{log_{10} 7}} \approx {1,18\over0,85} \approx 1,39
+				$$
+			</div>
+		</div>
+		<hr>
+		<div class="subject">
+			<h3>Tuletis</h3>
+			<div class="content eq" style="display: none">
+				$$
+					y=3x+27y^2 \\
+					y' = 3+54y
+				$$
+				<div class="short center divider"></div>
+				$$
+					y = cos2x \\
+					y' = -sin2x *2 = -2sin2x
+				$$
+				<div class="short center divider"></div>
+				$$
+					y= \sqrt{cosx} = {cos}^{1\over2}x \\
+					y' = {1\over2}cos^{-{1\over2}}x * (-sinx) = -{1\over2} * {1\over{\sqrt{cosx}}} * sinx = -{{sinx}\over{2 \sqrt{cosx}}}
+				$$
+				<div class="short center divider"></div>
+				$$
+					y=tan^2x &#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;\bigg|&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203; y=tanx * tanx\\
+					y' = 2tanx * {1\over{cos^2x}} = 2{tanx\over{cos^2x}} &#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;\bigg|&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203; y' = {1\over{cos^2x}}*tanx + {1\over{cos^2x}}*tanx
+				$$
+			</div>
+		</div>
+		<hr>
+		<div class="subject">
+			<h3>Determinandid</h3>
+			<div class="content eq" style="display: none">
+				$$
+					\begin{cases}
+					x-y+2z=7    \\
+					2x-3y+5z=17 \\
+					3x-2y-z=12  \\
+					\end{cases}
+				$$
+				<div class="short center divider"></div>
+				$$
+					D =
+					\begin{vmatrix}
+					1 & -1 & 2 \\
+					2 & -3 & 5 \\
+					3 & -2 & -1
+					\end{vmatrix}
+					= (1*(-3)*(-1)) + (2*2*(-2)) + (-1*3*5) - (3*2*(-3)) - (-1*(-1)*2)) - (5*1*(-2)) =  \\
+					= 3-8-15+18-2+10 = 6
+				$$
+				$$
+					D_x =
+					\begin{vmatrix}
+					7 & -1 & 2 \\
+					17 & -3 & 5 \\
+					12 & -2 & -1
+					\end{vmatrix}
+					= 21 -68 -60 +72 +70 -17 = 18
+				$$
+				$$
+					D_y =
+					\begin{vmatrix}
+					1 & 7 & 2 \\
+					2 & 17 & 5 \\
+					3 & 12 & -1
+					\end{vmatrix}
+					=-17 +48 +105 -102 -60 +14 = -12
+				$$
+				$$
+					D_z =
+					\begin{vmatrix}
+					1 & -1 & 7 \\
+					2 & -3 & 17 \\
+					3 & -2 & 12
+					\end{vmatrix}
+					=-36 -28 -51 +63 +34 +24 = 6
+				$$
+				<div class="short center divider"></div>
+				$$
+					x = {D_x \over D} = {18 \over 6} = 3\\
+					y = {D_y \over D} = {-12 \over 6} = -2\\
+					z = {D_z \over D} = {6 \over 6} = 1\\
+				$$
+			</div>
+		</div>
+		<hr>
+		<div class="subject">
+			<h3>Funktsiooni lahendamine</h3>
+			<div class="content eq" style="display: none">
+				$$
+					y=x^3 -3x^2
+				$$
+				<div class="short center divider"></div>
+				<h4>1. Paaris/Paaritu</h4>
+				$$
+					y=(-x)^3 - 3*(-x)^2 \\
+					y=-x^3 - 3x^2\\
+					\text{Märgid ei ole samad, seega funktsioon ei ole paaris. Märgid ei ole täpselt vastupidised, seega ei ole funktsioon ka paaritu.}
+				$$
+				<div class="short center divider"></div>
+				<h4>2. Määramis-, positiivne- ja negatiivnepiirkond. Nullkohad.</h4>
+				$$
+					\colorbox{pink}{X} = R \text{, sest tehtes ei ole murde ega potentsiaalset nulliga jagamist.} \\
+					x^3-3x^2 = 0 \\
+					x^2(x-3) = 0 \\
+					x_1 = 0 \\
+					x_2 = 3 \\
+					
+					\begin{array}{|c|c|c|c|c|c|}
+					\hline
+					x & \color{grey}{-1} & 0 & \color{grey}{1} & 3 & \color{grey}{4} \\ \hline
+					y & \color{grey}{-}  & 0 & \color{grey}{-} & 0 & \color{grey}{+} \\ \hline
+					\end{array} \\
+
+					\colorbox{pink}{X}^+ = (-\infty; 3)  \\
+					\colorbox{pink}{X}^- = (3; \infty)   \\
+					\colorbox{pink}{X}^\text{o} = \{0;3\}
+				$$
+				<div class="short center divider"></div>
+				<h4>3. Tõus, langus, ekstreemumkohad.</h4>
+				$$
+					y' = 3x^2-6x \\
+					3x^2-6x = 0 \\
+					3x(x-2) = 0 \\
+					x_1 = 0 \\
+					x_2 = 2 \\
+					
+					\begin{array}{|c|c|c|c|c|c|}
+					\hline
+					x & \color{grey}{-1} & 0 & \color{grey}{1} & 2 & \color{grey}{3} \\ \hline
+					y' & \color{grey}{+}  & 0 & \color{grey}{-} & 0 & \color{grey}{+} \\ \hline
+					\end{array} \\
+					
+					\colorbox{pink}{X}^{\uparrow} = (-\infty; 0)(2;\infty) \\
+					\colorbox{pink}{X}^{\downarrow} = (0; 2) \\
+					\colorbox{pink}{X}^e = \{0;2\}
+					\\
+					\\
+					y(x_1) = 0^3 -3*0^2 \\
+					y_1 = 0 \\
+					y(x_2) = 2^3 -3*2^2 \\
+					y_2 = 8-12 \\
+					y_2 = -4 \\
+					\colorbox{pink}{Y}^e = \{0;-4\}
+				$$
+				<div class="short center divider"></div>
+				<h4>4. Kumeruspiirkonnad, käänukohad.</h4>
+				$$
+					y'' = 6x-6 \\
+					6x-6 = 0 \\
+					6x = 6 \bigg|:6 \\
+					x = 1 \\
+					
+					\begin{array}{|c|c|c|c|}
+					\hline
+					x & \color{grey}{0} & 1 & \color{grey}{2} \\ \hline
+					y'' & \color{grey}{-}  & 0 & \color{grey}{+} \\ \hline
+					\end{array} \\
+
+					\colorbox{pink}{X}^k = \{1\}  \\
+					\colorbox{pink}{X}^\cup = (1;\infty)   \\
+					\colorbox{pink}{X}^\cap = (-\infty;1)
+				$$
+				<div class="short center divider"></div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".subject h3").click(function(){
+				$(this).siblings(".content").slideToggle()
+			});
+
+			$(".tab#valemid").click(function(){
+				$(".page#ylesanded").hide()
+				$(".page#valemid").show()
+				$(".tab#ylesanded").removeClass("active")
+				$(".tab#valemid").addClass("active")
+			});
+			$(".tab#ylesanded").click(function(){
+				$(".page#valemid").hide()
+				$(".page#ylesanded").show()
+				$(".tab#ylesanded").addClass("active")
+				$(".tab#valemid").removeClass("active")
+			});
+		});
+	</script>
+</body>
+</html>
